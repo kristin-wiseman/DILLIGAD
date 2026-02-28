@@ -1,0 +1,17 @@
+
+# Dependencies
+node_modules
+
+# Build artifacts
+/dist
+/build
+
+# Chrome extension specific
+_metadata
+
+# OS and Editor Files
+.DS_Store
+._*
+*~
+Thumbs.db
+.vscode/
