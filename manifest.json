@@ -3,6 +3,7 @@
   "name": "DILLIGAD",
   "version": "0.0.1",
   "description": "Ducks for mindful browsing.",
+  "minimum_chrome_version": "116",
   "icons": {
     "16": "", // favicon for ext's pgs
     "48": "images/icon-48.png", // extension mgmt pg
@@ -15,5 +16,11 @@
       "24": "",
       "32": ""
     }
-  }
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "permissions": [
+    "sidePanel"
+  ]
 }
