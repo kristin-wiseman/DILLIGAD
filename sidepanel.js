@@ -92,6 +92,24 @@ function addTabBehaviors() {
   });
 }
 
+function showDuckDetail(duck) {
+  const gridView = document.getElementById("barn-view");
+  const detailView = document.getElementById("duck-detail");
+
+  document.getElementById("duck-detail-img").src = `images/${duck.image}`;
+  document.getElementById("duck-detail-img").alt = duck.name;
+  document.getElementById("duck-detail-name").textContent = duck.name;
+  document.getElementById("duck-detail-desc").textContent = duck.bio;
+
+  gridView.classList.add("hidden");
+  detailView.classList.remove("hidden");
+}
+
+function showBarn() {
+  document.getElementById("barn-view").classList.remove("hidden");
+  document.getElementById("duck-detail").classList.add("hidden");
+}
+
 function populateDuckGrid() {
   const GRID = document.getElementById("duck-grid");
   if (!GRID) return;
@@ -99,12 +117,15 @@ function populateDuckGrid() {
   DUCKS.forEach(duck => {
     const tile = document.createElement("div");
     tile.className = "duck-tile";
+    tile.type = "button";
+    tile.setAttribute("aria-label", `View ${duck.name}`);
 
     const img = document.createElement("img");
     img.src = `images/${duck.image}`;
-    img.alt = `${duck.name}`;
+    img.alt = duck.name;
 
     tile.appendChild(img);
+    tile.addEventListener("click", () => showDuckDetail(duck));
     GRID.appendChild(tile);
   });
 }
@@ -113,4 +134,7 @@ function populateDuckGrid() {
 document.addEventListener("DOMContentLoaded", () => {
   addTabBehaviors();
   populateDuckGrid();
+
+  const back = document.getElementById("duck-back");
+  if (back) back.addEventListener("click", showBarn);
 });
