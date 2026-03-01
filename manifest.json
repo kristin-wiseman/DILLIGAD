@@ -36,5 +36,14 @@
         "https://*/*"
       ]
     }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["/images/*"],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ]
+    }
   ]
 }
