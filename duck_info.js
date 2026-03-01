@@ -2,22 +2,22 @@ const DUCKS = [
   {
     "name": "Duckie",
     "image": "base_duck.svg",
-    "bio": "This is Duckie. He loves wandering the wide wide world of the internet with his friends. Sometimes he gets lost and is grateful that you found him"
+    "bio": "This is Duckie. They love wandering the wide wide world of the internet with their friends. Sometimes they gets lost and is grateful that you found them and brought them home."
   },
   {
     "name": "Flower Duckie",
     "image": "flower_duck.svg",
-    "bio": "Duckie found a pretty flower in wild. He thinks it looks pretty as a hat."
+    "bio": "Duckie found a pretty flower in the wild. They thinks it looks pretty as a hat."
   },
   {
     "name": "Hat Duckie",
     "image": "hat_duck.svg",
-    "bio": "Duckie loves showing off his favourite blue bucket hat. Yarn duck made it for him"
+    "bio": "Duckie loves showing off his favourite blue bucket hat. Yarn duck made it for him."
   },
   {
     "name": "Hackstronaut Duck",
     "image": "space_duck.svg",
-    "bio": "Space duck is on her journey exploring the depths of the HackAstra Universe. Its her first time too! She has had alot of fun hacking and learning how to code and even met an alien cat!"
+    "bio": "Space duck is on her journey exploring the depths of the HackAstra Universe. She has had a lot of fun hacking for the first time and even encountered an alien cat!"
   },
   {
     "name": "Yarn Duck",
@@ -37,7 +37,7 @@ const DUCKS = [
   {
     "name": "Kristin",
     "image": "kristin_duck.svg",
-    "bio": "This is Kristin! She's one of the really cool people who made this extension. She is amazing!"
+    "bio": "This is Kristin! She's one of the really cool people who made this extension. She's a front-end developer getting into AI. She loves her cat Chico, even though he scammed her into giving him an extra dinner. "
   }
 
 ];

@@ -44,7 +44,6 @@ function addTabBehaviors() {
 }
 
 function showDuckDetail(duck) {
-  console.log(duck)
   const gridView = document.getElementById("barn-view");
   const detailView = document.getElementById("duck-detail");
 
@@ -52,6 +51,7 @@ function showDuckDetail(duck) {
   document.getElementById("duck-detail-img").alt = duck.name;
   document.getElementById("duck-detail-name").textContent = duck.name;
   document.getElementById("duck-detail-desc").textContent = duck.bio;
+  document.getElementById("duck-detail-counter").textContent = duck.counter;
 
   gridView.classList.add("hidden");
   detailView.classList.remove("hidden");
@@ -86,9 +86,16 @@ async function populateDuckGrid() {
 
     tile.appendChild(img);
 
+    if (discovered){
+      tile.addEventListener("click", () => 
+        showDuckDetail({
+          ...duck,
+          counter: `Encountered ${count} time${count > 1 ? "s" : ""}`
+        })
+      );
+    }
 
-
-    tile.addEventListener("click", () => showDuckDetail(duck));
+    
     GRID.appendChild(tile);
   });
 }
