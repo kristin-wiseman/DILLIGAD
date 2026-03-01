@@ -1,0 +1,106 @@
+:root {
+  --sky: #dff4ff;
+  --grass: #d8f5d0;
+  --barn: #ffb3b3;
+  --accent: #ffd966;
+  --text: #3a3a3a;
+  --panel: #ffffff;
+}
+
+.visually-hidden {
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  /* Fix for specific browser issues */
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  height: 100%;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header / tablist */
+.header {
+  background: var(--panel);
+  border-bottom: 3px solid #f0f0f0;
+  padding: 10px;
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+/* Tabs */
+.tab {
+  border: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #f3f3f3;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.tab.active {
+  background: var(--accent);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1) inset;
+}
+
+.tab:hover {
+  transform: translateY(-1px);
+}
+
+.tab:focus-visible {
+  outline: 3px solid #4da6ff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(77, 166, 255, 0.25);
+}
+
+/* Content */
+.content {
+  flex: 1;
+  min-height: 0; /* important for flex overflow */
+  display: flex;
+}
+
+.panel {
+  display: none;
+  animation: fade 0.25s ease;
+  flex: 1;
+  min-height: 0;
+}
+
+.panel.active {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Panel styling */
+#panel-barn {
+  background: linear-gradient(var(--sky), var(--grass));
+}

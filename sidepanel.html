@@ -1,25 +1,52 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="sidepanel.css">
   </head>
   <body>
-    <h1 id="panel-title">DILLIGAD</h1>
-    <div class="tabs">
-      <div role="tablist" aria-labelledby="panel-title">
-        <button id="barn" type="button" role="tab" aria-selected="true"
-          aria-controls="barn-panel" class="tab active" data-tab="barn"
-        >🏠 Barn</button>
-        <button id="settings" type="button" role="tab" aria-selected="false"
-          aria-controls="settings-panel" tabindex="-1" class="tab" data-tab="settings"
-        >⚙️ Settings</button>
-      </div>
-      <div id="barn-panel" role="tabpanel" tabindex="0" aria-labelledby="barn">
+    <h1 id="panel-title" class="visually-hidden">DILLIGAD</h1>
+
+    <div class="header" role="tablist" aria-labelledby="panel-title">
+      <button id="tab-barn"
+              class="tab active"
+              role="tab"
+              type="button"
+              aria-selected="true"
+              aria-controls="panel-barn">
+        🏠 Barn
+      </button>
+      <button id="tab-settings"
+              class="tab"
+              role="tab"
+              type="button"
+              aria-selected="false"
+              aria-controls="panel-settings"
+              tabindex="-1">
+        ⚙️ Settings
+      </button>
+    </div>
+    <div class="content">
+    <div id="panel-barn"
+         class="panel active"
+         role="tabpanel"
+         aria-labelledby="tab-barn"
+         tabindex="0">
+      <div>
         Duck Barn
       </div>
-      <div id="settings-panel" role="tabpanel" tabindex="0" aria-labelledby="settings">
+    </div>
+    <div id="panel-settings"
+         class="panel"
+         role="tabpanel"
+         aria-labelledby="tab-settings"
+         tabindex="0">
+      <div>
         Settings
       </div>
     </div>
+    </div>
+
+    <script src="sidepanel.js"></script>
   </body>
 </html>
