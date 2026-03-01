@@ -130,7 +130,7 @@ function populateDuckGrid() {
   });
 }
 
-// Tab behaviors
+// Sidepanel behaviors
 document.addEventListener("DOMContentLoaded", () => {
   addTabBehaviors();
   populateDuckGrid();

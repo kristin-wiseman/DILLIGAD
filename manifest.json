@@ -24,6 +24,17 @@
     "default_path": "sidepanel.html"
   },
   "permissions": [
-    "sidePanel"
+    "sidePanel",
+    "activeTab",
+    "scripting"
+  ],
+  "content_scripts": [
+    {
+      "js": ["add-ducks.js"],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ]
+    }
   ]
 }

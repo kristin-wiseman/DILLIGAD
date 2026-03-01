@@ -172,12 +172,3 @@ body {
   object-fit: cover;
   border-radius: 12px;
 }
-
-.active-button {
-    background-color: #4CAF50; /* green */
-    color: white;
-}
-
-.activate-button.active {
-    background-color: #d9534f; /* red */
-}
