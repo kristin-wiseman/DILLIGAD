@@ -38,10 +38,12 @@ const DUCKS = [
     "name": "Kristin",
     "image": "kristin_duck.svg",
     "bio": "This is Kristin! She's one of the really cool people who made this extension. She is amazing!"
-  },
-  {
-    "name": "Unknown",
-    "image": "unknown_duck.svg",
-    "bio": "You have not found this duck yet!",
   }
+
 ];
+
+const UNKNOWN_DUCK = {
+  "name": "Unknown",
+  "image": "unknown_duck.svg",
+  "bio": "You have not found this duck yet!"
+};

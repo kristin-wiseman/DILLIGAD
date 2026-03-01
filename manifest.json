@@ -26,11 +26,12 @@
   "permissions": [
     "sidePanel",
     "activeTab",
-    "scripting"
+    "scripting",
+    "storage"
   ],
   "content_scripts": [
     {
-      "js": ["add-ducks.js"],
+      "js": ["duck_info.js", "duck-storage.js", "add-ducks.js"],
       "matches": [
         "http://*/*",
         "https://*/*"
