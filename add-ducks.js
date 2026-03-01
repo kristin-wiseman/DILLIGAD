@@ -1,23 +1,21 @@
 
 (() => {
-  // Same duck files used in sidepanel
-  const DUCKS = ["base_duck.svg", "flower_duck.svg", "hat_duck.svg",
-    "space_duck.svg", "yarn_duck.svg", "stabby_duck.svg", "purple_duck.svg",
-    "kristin_duck.svg"];
-
   // Remove existing duck if present (avoid duplicates)
   const existing = document.getElementById("where-is-duck");
   if (existing) existing.remove();
 
   function getRandomDuck() {
-    const file = DUCKS[Math.floor(Math.random() * DUCKS.length)];
-    return chrome.runtime.getURL(`images/${file}`);
+    // DUCKS is from duck_info.js
+    //const file = DUCKS[Math.floor(Math.random() * DUCKS.length)].image;
+    //return chrome.runtime.getURL(`images/${file}`);
+    return DUCKS[Math.floor(Math.random() * DUCKS.length)];
   }
 
   function placeDuck() {
+    const random_duck = getRandomDuck();
     const duck = document.createElement("img");
     duck.id = "where-is-duck";
-    duck.src = getRandomDuck();
+    duck.src = chrome.runtime.getURL(`images/${random_duck.image}`);
     duck.alt = "Hidden duck";
 
     // Size similar to Waldo scale
@@ -54,7 +52,10 @@
     duck.style.cursor = "pointer";
 
     // Found interaction
-    duck.addEventListener("click", () => {
+    duck.addEventListener("click", async () => {
+      // Record encounter
+      await incrementDuck(random_duck.image);
+
       duck.style.transform = "scale(1.4)";
       duck.style.transition = "transform 0.2s ease";
       setTimeout(() => duck.remove(), 400);
